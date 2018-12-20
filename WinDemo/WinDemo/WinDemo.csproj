@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdoEmployeeRetiever.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +87,10 @@
     <ProjectReference Include="..\..\DataLayer\DataLayer.csproj">
       <Project>{70af41da-4b73-452b-84c3-6fbd5c7c33e8}</Project>
       <Name>DataLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Domen\Domain.csproj">
+      <Project>{00c2e061-bc08-4d81-93f0-d1e1bff4fd6f}</Project>
+      <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domen;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,13 +14,17 @@ namespace WinDemo
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        private readonly IEmployeeRetriever retriever;
+
+        public Form1(IEmployeeRetriever retriever)
         {
             InitializeComponent();
+            this.retriever = retriever;
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
             //string connString = DataLayer.DB.ConnectionString;
             DataLayer.DB.ApplicationName = "WinDemo Application";
             DataLayer.DB.ConnectionTimeout = 30;

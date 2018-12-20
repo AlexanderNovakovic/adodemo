@@ -9,7 +9,7 @@ namespace DataLayer
 {
     public class Employees
     {
-        public List<Employee> EmployeeList { get; set; }
+        public IReadOnlyCollection<Employee> EmployeeList { get; set; }
 
         public Employee GetEmployee(int employeeId)
         {
@@ -97,6 +97,16 @@ namespace DataLayer
 
                     cmd.ExecuteNonQuery();
 
+                }
+
+                SqlCommand cmd = conn.CreateCommand();
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                finally
+                {
+                    cmd.Dispose();
                 }
             }
         }
